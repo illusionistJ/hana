@@ -1,0 +1,19 @@
+.container {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  height: 100%;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+}

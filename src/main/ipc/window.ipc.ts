@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { IPC } from '@shared/ipc/channels'
 
 const getWin = (e: Electron.IpcMainInvokeEvent): BrowserWindow | null =>
@@ -25,5 +25,15 @@ export const registerWindowIpc = (): void => {
   // 4) 현재 상태 조회 (초기 아이콘 표시용)
   ipcMain.handle(IPC.window.isMaximized, (e) => {
     return getWin(e)?.isMaximized() ?? false
+  })
+
+  app.on('browser-window-created', (_e, win) => {
+    const send = (state: boolean): void => {
+      if (!win.isDestroyed()) {
+        win.webContents.send(IPC.window.onMaximizeChange, state)
+      }
+    }
+    win.on('maximize', () => send(true))
+    win.on('unmaximize', () => send(false))
   })
 }

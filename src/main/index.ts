@@ -16,7 +16,6 @@ function createWindow(): void {
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    // title: 'hana',
     width,
     height,
     minWidth: Math.min(MIN.width, maxW),

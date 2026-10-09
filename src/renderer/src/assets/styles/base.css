@@ -1,6 +1,9 @@
 :root {
   --color-background: #071427;
   --color-text: white;
+  --title-bar-background: #081527;
+  --navbar-background: #08162a;
+  --border-color: #162a42;
   --title-bar-height: 36px;
   --title-bar-button-hover-bg: rgba(255, 255, 255, 0.1);
 }

@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--navbar-background);
+  //   border-right: 1px solid var(--border-color);
+}
+
+.section {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--border-color);
+  }
+}

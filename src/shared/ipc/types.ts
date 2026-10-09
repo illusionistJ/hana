@@ -4,5 +4,6 @@ export interface IpcApi {
     toggleMaximize(): Promise<void>
     close(): Promise<void>
     isMaximized(): Promise<boolean>
+    onMaximizeChange(cb: (isMax: boolean) => void): () => void
   }
 }
