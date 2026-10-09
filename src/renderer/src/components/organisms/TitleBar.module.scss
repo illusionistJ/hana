@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  height: var(--title-bar-height);
+  display: flex;
+}
+
+.status {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  -webkit-app-region: drag;
+}
+
+.tools {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  -webkit-app-region: no-drag;
+}
+
+.toolButton {
+  margin-left: 5px;
+  background: none;
+  border: none;
+
+  &:hover {
+    background-color: var(--title-bar-button-hover-bg);
+  }
+}

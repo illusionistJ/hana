@@ -1,13 +1,28 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, screen } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import { registerAllIpc } from './ipc'
+
+const DESIRED = { width: 1920, height: 1080 }
+const MIN = { width: 1280, height: 720 }
 
 function createWindow(): void {
+  const display = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
+  const { width: maxW, height: maxH } = display.workArea
+
+  const width = Math.min(DESIRED.width, maxW)
+  const height = Math.min(DESIRED.height, maxH)
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    // title: 'hana',
+    width,
+    height,
+    minWidth: Math.min(MIN.width, maxW),
+    minHeight: Math.min(MIN.height, maxH),
+    center: true,
+    titleBarStyle: 'hidden',
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
@@ -51,6 +66,7 @@ app.whenReady().then(() => {
 
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
+  registerAllIpc()
 
   createWindow()
 
