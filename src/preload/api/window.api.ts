@@ -11,5 +11,6 @@ export const windowApi: IpcApi['window'] = {
     const handler = (_: unknown, state: boolean) => cb(state)
     ipcRenderer.on(IPC.window.onMaximizeChange, handler)
     return () => ipcRenderer.removeListener(IPC.window.onMaximizeChange, handler)
-  }
+  },
+  getVersion: (): Promise<string> => ipcRenderer.invoke(IPC.window.getVersion)
 }

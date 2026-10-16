@@ -36,4 +36,7 @@ export const registerWindowIpc = (): void => {
     win.on('maximize', () => send(true))
     win.on('unmaximize', () => send(false))
   })
+
+  // 5) version
+  ipcMain.handle(IPC.window.getVersion, () => app.getVersion())
 }

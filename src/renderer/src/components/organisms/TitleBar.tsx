@@ -4,7 +4,6 @@ import { IoMdClose } from 'react-icons/io'
 import { FaWindowMinimize } from 'react-icons/fa6'
 import { VscChromeMaximize, VscChromeRestore } from 'react-icons/vsc'
 import { useState, useEffect } from 'react'
-import logo from '@renderer/assets/images/logo.png'
 
 const TitleBar = (): React.JSX.Element => {
   const [isMaximized, setIsMaximized] = useState(false)
@@ -16,9 +15,7 @@ const TitleBar = (): React.JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.status}>
-        <img src={logo} alt="App Logo" width={20} height={20} />
-      </div>
+      <div className={styles.status}></div>
       <div className={styles.tools}>
         <ActionIcon
           size="sm"

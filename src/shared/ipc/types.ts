@@ -5,5 +5,6 @@ export interface IpcApi {
     close(): Promise<void>
     isMaximized(): Promise<boolean>
     onMaximizeChange(cb: (isMax: boolean) => void): () => void
+    getVersion(): Promise<string>
   }
 }

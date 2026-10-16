@@ -4,6 +4,7 @@ export const IPC = {
     toggleMaximize: 'window:toggleMaximize',
     close: 'window:close',
     isMaximized: 'window:isMaximized',
-    onMaximizeChange: 'window:maximize-change'
+    onMaximizeChange: 'window:maximize-change',
+    getVersion: 'window:getVersion'
   }
 } as const
