@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styles from './SideBar.module.scss'
+import { UserButton } from '@renderer/components/molecules/button/user/UserButton'
+import { ScrollArea } from '@mantine/core'
 
 const SideBar = (): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState(true)
@@ -9,12 +11,16 @@ const SideBar = (): React.JSX.Element => {
   }
 
   return (
-    <div className={styles.navbar}>
-      <nav>
+    <nav className={styles.navbar}>
+      <div className={styles.header}></div>
+      <ScrollArea className={styles.links}>
         <div className={styles.section}>test</div>
-        <div className={styles.section}>test</div>
-      </nav>
-    </div>
+      </ScrollArea>
+
+      <div className={styles.footer}>
+        <UserButton />
+      </div>
+    </nav>
   )
 }
 

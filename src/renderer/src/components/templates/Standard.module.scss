@@ -6,7 +6,7 @@
 }
 
 .sidebar {
-  width: 240px;
+  width: var(--sidebar-width);
   flex-shrink: 0;
   overflow-x: hidden;
   overflow-y: auto;

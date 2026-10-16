@@ -6,6 +6,7 @@
   --border-color: #162a42;
   --title-bar-height: 36px;
   --title-bar-button-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-width: 280px;
 }
 
 *,
