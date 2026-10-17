@@ -1,12 +1,7 @@
-import { HashRouter, useRoutes } from 'react-router-dom'
-import { routes } from '@renderer/router/routes'
-import { JSX } from 'react/jsx-runtime'
-import BasicTemplate from './components/templates/Basic'
+import { HashRouter } from 'react-router-dom'
+import { RouteRenderer } from './router'
 
-const RouteRenderer = (): JSX.Element | null => {
-  const element = useRoutes(routes)
-  return element
-}
+import BasicTemplate from './components/templates/Basic'
 
 function App(): React.JSX.Element {
   return (

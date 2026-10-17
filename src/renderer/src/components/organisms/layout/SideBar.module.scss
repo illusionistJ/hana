@@ -1,11 +1,14 @@
 .navbar {
   width: 100%;
   height: 100%;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   background-color: var(--navbar-background);
-  //   border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 5px;
 }
 
 .header {
@@ -17,13 +20,34 @@
 
 .links {
   flex: 1;
-  padding: 10px;
+}
+
+.link {
+  padding: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: var(--color-text-3);
+  &:hover {
+    background-color: #1a4d91;
+    border-radius: 5px;
+  }
+}
+.linkActive {
+  // color: var(--color-text);
+  // background-color: var(--mantine-color-blue-light);
+  color: var(--mantine-color-blue-light-color);
 }
 
 .section {
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
   }
+}
+.sectionTitle {
+  padding: 15px;
+  margin-bottom: -12px;
+  color: var(--color-text-3);
+  font-size: 10px;
 }
 
 .footer {
@@ -42,5 +66,6 @@
   gap: var(--mantine-spacing-sm);
   color: var(--color-text);
   font-size: 20px;
+  font-weight: extra-bold;
   padding: 10px;
 }
