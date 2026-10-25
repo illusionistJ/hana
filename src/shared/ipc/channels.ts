@@ -6,5 +6,11 @@ export const IPC = {
     isMaximized: 'window:isMaximized',
     onMaximizeChange: 'window:maximize-change',
     getVersion: 'window:getVersion'
+  },
+  config: {
+    load: 'config:load',
+    save: 'config:save',
+    selectDirectory: 'config:selectDirectory',
+    getDefault: 'config:getDefault'
   }
 } as const

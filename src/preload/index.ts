@@ -1,10 +1,11 @@
 import { contextBridge } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 import { windowApi } from './api/window.api'
+import { configApi } from './api/config.api'
 import type { IpcApi } from '@shared/ipc/types'
 
 // Custom APIs for renderer
-const api: IpcApi = { window: windowApi }
+const api: IpcApi = { window: windowApi, config: configApi }
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
